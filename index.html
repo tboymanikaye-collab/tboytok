@@ -1,166 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TboyTok</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    <title>TboyTok</title>
 
-body {
-    background: #000;
-    color: white;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-.app {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-}
+        body {
+            margin: 0;
+            background: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
 
-.feed {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-}
+        .feed {
+            width: 100%;
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+        }
 
-.video {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    scroll-snap-align: start;
-    background: #151515;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        .video-box {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            scroll-snap-align: start;
+            background: #000;
+        }
 
-.video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.info {
-    position: absolute;
-    bottom: 85px;
-    left: 15px;
-    right: 80px;
-    text-shadow: 0 1px 4px #000;
-}
+        .info {
+            position: absolute;
+            left: 15px;
+            bottom: 90px;
+            text-shadow: 0 1px 5px #000;
+        }
 
-.username {
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 8px;
-}
+        .info h3 {
+            margin: 0 0 8px;
+        }
 
-.caption {
-    font-size: 15px;
-}
+        .info p {
+            margin: 0;
+        }
 
-.actions {
-    position: absolute;
-    right: 12px;
-    bottom: 100px;
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    text-align: center;
-}
+        .actions {
+            position: absolute;
+            right: 15px;
+            bottom: 120px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
 
-.action {
-    font-size: 28px;
-}
+        .actions div {
+            font-size: 28px;
+        }
 
-.action span {
-    display: block;
-    font-size: 12px;
-    margin-top: 3px;
-}
+        .actions span {
+            display: block;
+            font-size: 12px;
+        }
 
-.nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 65px;
-    background: rgba(0,0,0,0.9);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 10;
-}
+        .nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+            background: #050505;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 100;
+        }
 
-.nav div {
-    text-align: center;
-    font-size: 12px;
-}
+        .nav div {
+            text-align: center;
+            font-size: 12px;
+            cursor: pointer;
+        }
 
-.nav b {
-    display: block;
-    font-size: 23px;
-    margin-bottom: 2px;
-}
-</style>
+        .nav b {
+            display: block;
+            font-size: 22px;
+            margin-bottom: 3px;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="app">
-
     <div class="feed">
 
-        <section class="video">
-          <video src="videos/test.mp4" autoplay muted loop playsinline></video>
+        <!-- VIDEO 1 -->
+        <div class="video-box">
+
+            <video
+                src="videos/test.mp4"
+                autoplay
+                muted
+                loop
+                playsinline>
+            </video>
+
             <div class="info">
-                <div class="username">@tboy</div>
-                <div class="caption">Welcome to TboyTok 🔥</div>
+                <h3>@tboy</h3>
+                <p>Welcome to TboyTok 🔥</p>
             </div>
 
             <div class="actions">
-                <div class="action">❤️<span>0</span></div>
-                <div class="action">💬<span>0</span></div>
-                <div class="action">↗️<span>Share</span></div>
+                <div>❤️<span>0</span></div>
+                <div>💬<span>0</span></div>
+                <div>↗️<span>Share</span></div>
             </div>
-        </>
 
-        <section class="video">
+        </div>
+
+
+        <!-- VIDEO 2 -->
+        <div class="video-box">
+
+            <video
+                src="videos/test.mp4"
+                muted
+                loop
+                playsinline>
+            </video>
+
             <div class="info">
-                <div class="username">@creator</div>
-                <div class="caption">Another video on TboyTok 🎥</div>
+                <h3>@creator</h3>
+                <p>Another video on TboyTok 🎥</p>
             </div>
 
             <div class="actions">
-                <div class="action">❤️<span>0</span></div>
-                <div class="action">💬<span>0</span></div>
-                <div class="action">↗️<span>Share</span></div>
+                <div>❤️<span>0</span></div>
+                <div>💬<span>0</span></div>
+                <div>↗️<span>Share</span></div>
             </div>
-        </section>
+
+        </div>
 
     </div>
 
+
+    <!-- BOTTOM NAVIGATION -->
     <div class="nav">
-        <div><b>🏠</b>Home</div>
-        <div><b>🔍</b>Search</div>
-        <div><b>➕</b>Upload</div>
-        <div><b>👤</b>Profile</div>
+
+        <div onclick="location.href='index.html'">
+            <b>🏠</b>
+            Home
+        </div>
+
+        <div>
+            <b>🔍</b>
+            Search
+        </div>
+
+        <div>
+            <b>➕</b>
+            Upload
+        </div>
+
+        <div onclick="location.href='profile.html'">
+            <b>👤</b>
+            Profile
+        </div>
+
     </div>
 
-</div>
-<script>
-document.querySelectorAll("video").forEach(video => {
-    video.addEventListener("click", () => {
-        video.muted = !video.muted;
-    });
-});
-</script>
+
+    <!-- TAP VIDEO TO MUTE / UNMUTE -->
+    <script>
+
+        document.querySelectorAll("video").forEach(video => {
+
+            video.addEventListener("click", () => {
+
+                video.muted = !video.muted;
+
+            });
+
+        });
+
+    </script>
+
 </body>
 </html>
